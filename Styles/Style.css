@@ -111,14 +111,13 @@ body {
   border-spacing: 0;
 }
 .main-container .display-todo table thead tr th {
-  padding: 1rem;
   text-align: left;
   border-bottom: 1px solid #000000;
 }
 .main-container .display-todo table tbody tr td {
-  padding: 1rem;
   border-bottom: 1px solid #000000;
   text-align: center;
+  padding: 1rem;
 }
 .main-container .display-todo table tbody tr td .edit,
 .main-container .display-todo table tbody tr td .delete {
@@ -130,4 +129,41 @@ body {
   text-decoration: none;
   margin: 0.5rem;
   border-radius: 0.4rem;
+}
+
+@media screen and (max-width: 1300px) {
+  .login-container form {
+    width: 80%;
+  }
+  .main-container .form {
+    width: 90%;
+  }
+  .main-container .display-todo {
+    width: 100%;
+  }
+  .main-container .display-todo table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  .main-container .display-todo table thead tr th {
+    text-align: left;
+    border-bottom: 1px solid #000000;
+  }
+  .main-container .display-todo table tbody tr td {
+    border-bottom: 1px solid #000000;
+    text-align: center;
+    padding: 1rem 0rem;
+  }
+  .main-container .display-todo table tbody tr td .edit,
+  .main-container .display-todo table tbody tr td .delete {
+    background-color: #000000;
+    color: #fff;
+    padding: 0.5rem;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    margin: 0.5rem;
+    border-radius: 0.4rem;
+  }
 }/*# sourceMappingURL=Style.css.map */

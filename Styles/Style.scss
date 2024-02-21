@@ -120,7 +120,6 @@ body {
       thead {
         tr {
           th {
-            padding: 1rem;
             text-align: left;
             border-bottom: 1px solid #000000;
           }
@@ -129,9 +128,56 @@ body {
       tbody {
         tr {
           td {
-            padding: 1rem;
             border-bottom: 1px solid #000000;
             text-align: center;
+            padding: 1rem;
+
+            .edit,
+            .delete {
+              background-color: #000000;
+              color: #fff;
+              padding: 0.5rem;
+              border: none;
+              cursor: pointer;
+              text-decoration: none;
+              margin: 0.5rem;
+              border-radius: 0.4rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .login-container form {
+    width: 80%;
+  }
+  .main-container .form {
+    width: 90%;
+  }
+  .main-container .display-todo {
+    width: 100%;
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border-spacing: 0;
+      thead {
+        tr {
+          th {
+            text-align: left;
+            border-bottom: 1px solid #000000;
+          }
+        }
+      }
+      tbody {
+        tr {
+          td {
+            border-bottom: 1px solid #000000;
+            text-align: center;
+            padding: 1rem 0rem;
 
             .edit,
             .delete {
