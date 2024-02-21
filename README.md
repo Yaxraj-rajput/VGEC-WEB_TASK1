@@ -4,3 +4,4 @@
 #### todo with mysql ✅
 #### crud operation on todo ✅
 #### password reset using smtp ✅ 
+#### styling done ✅ 
