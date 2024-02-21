@@ -52,20 +52,20 @@ header("Location: index.php");
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" type="image/png" href="images/logo.png">
 
-	<link rel="stylesheet" type="text/css" href="./styles/loginstyle.css">
+    <link rel="stylesheet" href="./Styles/Style.css" />
 
 	<title>Register | VGEC</title>
 </head>
 <body>
-	<div class="container">
-		<form action="" method="POST" class="login-email">
-            <p class="login-text" style="font-size: 2rem; font-weight: 800;">Register</p>
+	<div class="login-container">
+		<form action="" method="POST" class="">
+            <h1 class="login-text" style="font-size: 2rem; font-weight: 800;">Register As New User For VGEC</h1>
 				<input type="text" placeholder="Username" name="username" value="<?php echo $username; ?>" required>
 				<input type="email" placeholder="Email" name="email" value="<?php echo $email; ?>" required>
 				<input type="password" placeholder="Password" name="password" value="<?php echo $_POST['password']; ?>" required>
 				<input type="password" placeholder="Confirm Password" name="cpassword" value="<?php echo $_POST['cpassword']; ?>" required>
 				<button name="submit" class="btn">Register</button>
-			<p class="login-register-text">Already a user? <a href="index.php">Go here</a>.</p>
+			<span class="login-register-text">Already a user? <a href="index.php">Go here</a>.</span>
 		</form>
 	</div>
 

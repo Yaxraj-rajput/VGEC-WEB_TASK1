@@ -1,7 +1,11 @@
 <?php
-
+session_start();
 include 'config.php';
 
+
+if (!isset($_SESSION['username'])) {
+    header("Location: index.php");
+}
 
 if (isset($_POST['submit'])) {
 
@@ -30,13 +34,12 @@ if ($result) {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ADD TO DO | VGEC</title>
-    <link rel="stylesheet" href="./Styles/style.css" />
+    <link rel="stylesheet" href="./Styles/Style.css" />
   </head>
   <body>
     <div class="main-container">
-      <div class="form">
-        <form action="" method="POST" class="login-email">
-          <h1 style="font-size: 2rem; font-weight: 800">Add To Do</h1>
+        <form action="" method="POST" class="form">
+          <h1 style="font-size: 2rem; font-weight: 800">Hello <?php echo $_SESSION["username"]?> Add A To Do</h1>
           <input type="text" placeholder="Title" name="title" required />
           <input
             type="text"
@@ -46,7 +49,6 @@ if ($result) {
           />
           <button name="submit" value="submit" class="btn">Add</button>
         </form>
-      </div>
       <div class="display-todo">
         <table>
          
@@ -62,7 +64,7 @@ if ($result) {
             <td><?php echo $row['title'] ?></td>
             <td><?php echo $row['description'] ?></td>
             <td><?php echo $row['time_added'] ?></td>
-            <td><a href="edit.php?id=<?php echo $row['id'] ?>">Edit</a><a href="delete.php?id=<?php echo $row['id'] ?>">Delete</a></td>
+            <td><a class="edit" href="edit.php?id=<?php echo $row['id'] ?>">Edit</a><a class="delete" style="background: red;" href="delete.php?id=<?php echo $row['id'] ?>">Delete</a></td>
 
           </tr>
           <?php ; } }else{ echo"<span>No todo for now</span>";}?>
