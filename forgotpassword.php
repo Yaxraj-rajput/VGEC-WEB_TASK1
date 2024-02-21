@@ -53,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
    
     if (sendPasswordResetEmail($email, $token)) {
-        echo "Password reset email has been sent!";
+        echo "<script>alert('password reset link has been sent')</script>";
     } else {
         echo "Failed to send password reset email.";
         
@@ -67,12 +67,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Styles/Style.css" />
     <title>Document</title>
 </head>
 <body>
-    <form action="" method="POST">
+    <div class="login-container">
+    <form class="form" action="" method="POST">
         <input type="email" name="email" placeholder="Enter your email" required>
         <button type="submit">Submit</button>
     </form>
+    </div>
 </body>
 </html>

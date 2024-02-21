@@ -46,17 +46,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Password Reset</title>
+    <title>Password Reset</title>    
+    <link rel="stylesheet" href="./Styles/Style.css" />
+
 </head>
 <body>
 
 <?php if (!isset($_POST["token"])): ?>
-    <form method="post">
+    <div class="login-container">
+    <form class="form" method="post">
         <input type="hidden" name="token" value="<?php echo $_GET['token']; ?>">
         <input type="password" name="password" placeholder="New Password" required>
         <input type="password" name="confirm_password" placeholder="Confirm Password" required>
         <button type="submit">Reset Password</button>
     </form>
+    <div class="login-container">
 <?php endif; ?>
 
 </body>
