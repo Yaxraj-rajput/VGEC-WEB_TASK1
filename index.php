@@ -47,7 +47,8 @@ if (isset($_POST['submit'])) {
 <body>
 	<div class="login-container">
 		<form action="" method="POST" class="">
-			<h1 class="login-text" style="font-size: 2rem; font-weight: 800;">Login To VGEC Portal</h1>
+
+			<div class="topbar"><img src="./Images/logo.png" alt="logo"><h1 class="login-text" style="font-size: 2rem; font-weight: 800;">Login To VGEC Portal</h1></div>
 				<input type="email" placeholder="Email" name="email" value="<?php echo $email; ?>" required>
 				<input type="password" placeholder="Password" name="password" value="<?php echo $_POST['password']; ?>" required>
 				<button name="submit" class="btn">Login</button>

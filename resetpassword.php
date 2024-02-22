@@ -26,7 +26,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $hashed_password = md5($password);
 
                 $update_sql = "UPDATE users SET password = '$hashed_password' WHERE email = '$email'";
-                if ($conn->query($update_sql) === TRUE) {
+                $delete_token = "DELETE FROM password_reset_tokens WHERE token = '$token'";
+                if ($conn->query($update_sql) === TRUE && $conn->query($delete_token) === TRUE){
                     echo "Password updated successfully.";
                 } else {
                     echo "Error updating password: " . $conn->error;
@@ -55,12 +56,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <?php if (!isset($_POST["token"])): ?>
     <div class="login-container">
     <form class="form" method="post">
+    <div class="topbar"><img src="./Images/logo.png" alt="logo"><h1 class="login-text" style="font-size: 2rem; font-weight: 800;">Reset Password For VGEC Portal</h1></div>
         <input type="hidden" name="token" value="<?php echo $_GET['token']; ?>">
         <input type="password" name="password" placeholder="New Password" required>
         <input type="password" name="confirm_password" placeholder="Confirm Password" required>
         <button type="submit">Reset Password</button>
     </form>
-    <div class="login-container">
+</div>
 <?php endif; ?>
 
 </body>

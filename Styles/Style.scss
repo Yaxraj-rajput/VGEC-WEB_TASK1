@@ -14,11 +14,20 @@ body {
   height: 100vh;
   display: grid;
   place-items: center;
-  background-color: #f5f5f5;
+  background-image: url("../Images/VGEC-Ahmedabad3.jpg"),
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  background-blend-mode: overlay;
+  background-size: cover;
 
   form {
     width: 50%;
-    background-color: rgb(206, 206, 206);
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     padding: 1rem;
     display: flex;
     flex-direction: column;
@@ -27,10 +36,23 @@ body {
     border-radius: 1rem;
     gap: 1rem;
 
-    h1 {
-      text-align: center;
-      margin-bottom: 1rem;
-      color: #0e0e0e;
+    .topbar {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+
+      h1 {
+        text-align: center;
+        margin-bottom: 1rem;
+        color: #fff;
+      }
+
+      img {
+        width: 75px;
+        border-radius: 50%;
+      }
     }
 
     input {
@@ -38,13 +60,21 @@ body {
       padding: 1rem;
       border: none;
       outline: none;
-      border-radius: 0.25rem;
+      // border-radius: 0.25rem;
+      background-color: transparent;
+      border-bottom: 1px solid #fff;
+      color: #fff;
+      font-size: 1rem;
+
+      &::placeholder {
+        color: #fff;
+      }
     }
 
     span {
-      color: #0e0e0e;
+      color: #fff;
       a {
-        color: #000000;
+        color: #fff;
         text-decoration: none;
         font-weight: bold;
       }
@@ -70,7 +100,6 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  background-color: #f5f5f5;
 
   .form {
     width: 50%;

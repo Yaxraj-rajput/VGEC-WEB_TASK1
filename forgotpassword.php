@@ -40,10 +40,20 @@ function sendPasswordResetEmail($email, $token) {
 
 
 
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
 
+    $user = "SELECT * FROM users WHERE email = '$email'";
+    $result = $conn->query($user);
+
+    if ($result->num_rows <= 0) {
+        echo "<script>alert('User not found');window.location.href = 'forgotpassword.php';</script>";
+        
+              
+    }
+
+    else {
+    
     $token = generateToken();
 
     
@@ -52,12 +62,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn->query($sql);
 
    
+
+
     if (sendPasswordResetEmail($email, $token)) {
         echo "<script>alert('password reset link has been sent')</script>";
     } else {
         echo "Failed to send password reset email.";
         
-    }
+    }}
 }
 ?>
 
@@ -73,6 +85,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <div class="login-container">
     <form class="form" action="" method="POST">
+    <div class="topbar"><img src="./Images/logo.png" alt="logo"><h1 class="login-text" style="font-size: 2rem; font-weight: 800;">Forgot Password</h1></div>
+
         <input type="email" name="email" placeholder="Enter your email" required>
         <button type="submit">Submit</button>
     </form>

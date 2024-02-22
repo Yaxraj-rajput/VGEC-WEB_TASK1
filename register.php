@@ -58,8 +58,10 @@ header("Location: index.php");
 </head>
 <body>
 	<div class="login-container">
-		<form action="" method="POST" class="">
-            <h1 class="login-text" style="font-size: 2rem; font-weight: 800;">Register As New User For VGEC</h1>
+		<form action="" method="POST" class="">		
+				<div class="topbar"><img src="./Images/logo.png" alt="logo"><h1 class="login-text" style="font-size: 2rem; font-weight: 800;">Register As New User For VGEC</h1></div>
+
+        
 				<input type="text" placeholder="Username" name="username" value="<?php echo $username; ?>" required>
 				<input type="email" placeholder="Email" name="email" value="<?php echo $email; ?>" required>
 				<input type="password" placeholder="Password" name="password" value="<?php echo $_POST['password']; ?>" required>
