@@ -28,7 +28,7 @@ function sendPasswordResetEmail($email, $token) {
 
         $mail->isHTML(true);                                        
         $mail->Subject = 'Password Reset Request';
-        $mail->Body    = 'Click the following link to reset your password: <a href="http://localhost/vgec-web/resetpassword.php?token=' . $token . '">Reset Password</a>';
+        $mail->Body    = '<h1>Click the following link to reset your password: <a href="http://localhost/vgec-web/resetpassword.php?token=' . $token . '">Reset Password</a></h1>';
 
         $mail->send();
         return true;

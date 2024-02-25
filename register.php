@@ -39,7 +39,7 @@ header("Location: index.php");
 		}
 		
 	} else {
-		echo "<script>alert('Incorrect password')</script>";
+		echo "<script>alert('Confirm password should be same')</script>";
 	}
 }
 
