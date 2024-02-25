@@ -17,7 +17,7 @@ Prerequisites
 Steps
 
 1. Clone the Repository
-   git clone https://github.com/yourusername/yourproject.git
+   git clone https://github.com/Yaxraj-rajput/VGEC-WEB_TASK1
 
 2. Navigate to the Project Directory
    cd yourproject
